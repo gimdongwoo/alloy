@@ -2,6 +2,8 @@
 	Sets options and wraps some functionality around the source mapping functions
 	provided by the UglifyJS library
 */
+require('babel-polyfill');
+
 var SM = require('source-map'),
 	fs = require('fs'),
 	path = require('path'),

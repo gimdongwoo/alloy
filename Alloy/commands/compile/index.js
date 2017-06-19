@@ -1,3 +1,5 @@
+require('babel-polyfill');
+
 var ejs = require('ejs'),
 	path = require('path'),
 	fs = require('fs'),
