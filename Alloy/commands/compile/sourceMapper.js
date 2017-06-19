@@ -24,8 +24,7 @@ exports.OPTIONS_OUTPUT = {
 	comments: false,
 	babelrc: false,
 	passPerPreset: false,
-	presets: [require('babel-preset-es2015')],
-	plugins: [require('babel-plugin-transform-runtime')]
+	presets: [require('babel-preset-es2015')]
 };
 
 function mapLine(mapper, theMap, genMap, line) {
