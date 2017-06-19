@@ -1,5 +1,3 @@
-require('babel-polyfill');
-
 var fs = require('fs'),
 	path = require('path'),
 	colors = require('colors'),

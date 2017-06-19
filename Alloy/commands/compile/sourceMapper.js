@@ -2,8 +2,6 @@
 	Sets options and wraps some functionality around the source mapping functions
 	provided by the UglifyJS library
 */
-require('babel-polyfill');
-
 var SM = require('source-map'),
 	fs = require('fs'),
 	path = require('path'),
@@ -26,7 +24,8 @@ exports.OPTIONS_OUTPUT = {
 	comments: false,
 	babelrc: false,
 	passPerPreset: false,
-	presets: [require('babel-preset-es2015')]
+	presets: [require('babel-preset-es2015')],
+	plugins: [require('babel-plugin-transform-runtime')]
 };
 
 function mapLine(mapper, theMap, genMap, line) {
