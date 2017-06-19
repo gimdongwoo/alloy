@@ -99,12 +99,11 @@ exports.generateCodeAndSourceMap = function(generator, compileConfig) {
 	}
 
 	// create source map and generated code
-	var options = _.clone(exports.OPTIONS_OUTPUT);
-	_.extend(options, {
-		plugins: _.union(options.plugins, [
+	var options = _.extend(_.clone(exports.OPTIONS_OUTPUT), {
+		plugins: [
 			[require('./ast/builtins-plugin'), compileConfig],
 			[require('./ast/optimizer-plugin'), compileConfig.alloyConfig]
-		])
+		]
 	});
 	if (compileConfig.sourcemap) {
 		options.sourceMaps = true;
