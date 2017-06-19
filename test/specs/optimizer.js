@@ -116,8 +116,11 @@ describe('optimizer.js', function() {
 						// as the last step of JS file processing. The unit testing here
 						// uses the same settings as the Alloy compile process.
 						var squeezeFunction = function() {
-							var options = _.extend(_.clone(sourceMapper.OPTIONS_OUTPUT), {
-								plugins: [['./Alloy/commands/compile/ast/optimizer-plugin', {platform: platform}]]
+							var options = _.clone(sourceMapper.OPTIONS_OUTPUT);
+							_.extend(options, {
+								plugins: _.union(options.plugins, [
+									['./Alloy/commands/compile/ast/optimizer-plugin', {platform: platform}]
+								])
 							});
 							var result = babel.transformFromAst(ast, null, options);
 							ast = result.ast;
